@@ -6,7 +6,7 @@ import LogoTicker from "@/components/LogoTicker";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import FAQSection from "@/components/FAQSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
-import UseCasesSection from "@/components/UseCasesSection";
+import UseCasesTabs from "@/components/UseCasesTabs";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ChromeExtensionSection from "@/components/ChromeExtensionSection";
 import CTABand from "@/components/CTABand";
@@ -85,7 +85,7 @@ export default function Index() {
       <div className="py-8" />
       <TestimonialsSection />
       <div className="py-8" />
-      <UseCasesSection />
+      <UseCasesTabs />
       <div className="py-8" />
       <CaseStudiesSection />
       <div className="py-8" />
