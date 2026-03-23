@@ -4,6 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
 import LogoTicker from "@/components/LogoTicker";
 import IntegrationsSection from "@/components/IntegrationsSection";
+import FAQSection from "@/components/FAQSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import UseCasesSection from "@/components/UseCasesSection";
 import CaseStudiesSection from "@/components/CaseStudiesSection";
