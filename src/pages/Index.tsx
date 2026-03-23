@@ -91,6 +91,7 @@ export default function Index() {
       <div className="py-8" />
       <ChromeExtensionSection />
       <div className="py-8" />
+      <FAQSection />
       <CTABand />
       <Footer />
       <ToastNotification />
