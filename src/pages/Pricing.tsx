@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
+import FAQSection from "@/components/FAQSection";
 import Footer from "@/components/Footer";
 
 const plans = [
@@ -188,6 +189,7 @@ export default function Pricing() {
         ))}
       </div>
 
+      <FAQSection />
       <Footer />
     </div>
   );
