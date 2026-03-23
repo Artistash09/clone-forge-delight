@@ -58,13 +58,16 @@ export default function Navbar() {
 
       <div className="hidden lg:flex items-center gap-3">
         <button className="text-il-text-muted text-sm px-3.5 py-2 rounded-md hover:text-il-white hover:bg-il-dark2 transition-colors">
-          Log in
+          Sign in
+        </button>
+        <button className="text-il-white text-sm px-4 py-2.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
+          Book Demo
         </button>
         <Link
           to="/pricing"
           className="bg-il-violet text-primary-foreground px-5 py-2.5 text-sm font-semibold rounded-lg hover:bg-il-violet-light transition-all hover:-translate-y-0.5"
         >
-          Start Free Trial
+          Start Free
         </Link>
       </div>
 

@@ -11,6 +11,7 @@ import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
 import ToastNotification from "@/components/ToastNotification";
 import ExitIntentPopup from "@/components/ExitIntentPopup";
+import CookieBanner from "@/components/CookieBanner";
 
 export default function Index() {
   return (
