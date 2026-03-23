@@ -69,6 +69,12 @@ const plans = [
 
 export default function Pricing() {
   const [period, setPeriod] = useState<"monthly" | "annual">("monthly");
+  const [reps, setReps] = useState(5);
+  const [dealSize, setDealSize] = useState(15000);
+
+  const extraMeetings = reps * 8;
+  const pipelineAdded = Math.round(extraMeetings * (dealSize * 0.15));
+  const roiPercent = Math.round(((pipelineAdded * 0.2) / 149) * 100);
 
   return (
     <div className="min-h-screen bg-background">
