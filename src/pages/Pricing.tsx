@@ -182,7 +182,84 @@ export default function Pricing() {
         </div>
       </div>
 
-      {/* ROI Calculator */}
+      {/* Feature Comparison Table */}
+      <div className="max-w-[1000px] mx-auto px-6 pb-16">
+        <div className="text-center mb-10">
+          <div className="section-label">Compare</div>
+          <h2 className="section-title">Compare plans in detail</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse">
+            <thead>
+              <tr className="border-b border-il-border">
+                <th className="text-left text-sm text-il-gray-light font-semibold py-3 px-4 w-[40%]">Feature</th>
+                <th className="text-center text-sm text-il-gray-light font-semibold py-3 px-4">Starter</th>
+                <th className="text-center text-sm font-semibold py-3 px-4 bg-il-violet/10 border-x border-il-violet text-il-violet-light">Growth</th>
+                <th className="text-center text-sm text-il-gray-light font-semibold py-3 px-4">Enterprise</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                { category: "Credits & Usage", rows: [
+                  ["Monthly credits", "500", "2,500", "Unlimited"],
+                  ["Credit rollover", "✗", "3 months", "12 months"],
+                  ["Bulk enrichment", "✗", "✓", "✓"],
+                ]},
+                { category: "Data Access", rows: [
+                  ["Verified emails", "✓", "✓", "✓"],
+                  ["Direct mobile numbers", "✓", "✓", "✓"],
+                  ["Intent data filters", "✗", "✓", "✓"],
+                  ["Job change alerts", "✗", "✓", "✓"],
+                  ["Technographic filters", "✗", "✗", "✓"],
+                ]},
+                { category: "Integrations", rows: [
+                  ["Chrome extension", "✓", "✓", "✓"],
+                  ["HubSpot / Salesforce", "✗", "✓", "✓"],
+                  ["API access", "✗", "10k calls/mo", "Unlimited"],
+                  ["Zapier / Make", "✗", "✓", "✓"],
+                  ["Custom integrations", "✗", "✗", "✓"],
+                ]},
+                { category: "Team & Support", rows: [
+                  ["User seats", "1", "5", "Unlimited"],
+                  ["Email support", "✓", "✓", "✓"],
+                  ["Priority support", "✗", "✓", "✓"],
+                  ["Dedicated CSM", "✗", "✗", "✓"],
+                  ["SSO / SAML", "✗", "✗", "✓"],
+                  ["SLA guarantee", "✗", "✗", "✓"],
+                ]},
+                { category: "Compliance", rows: [
+                  ["GDPR compliant", "✓", "✓", "✓"],
+                  ["DPA available", "✗", "✓", "✓"],
+                  ["SOC 2 Type II", "✗", "✗", "✓"],
+                ]},
+              ].map((group) => (
+                <>
+                  <tr key={`cat-${group.category}`}>
+                    <td colSpan={4} className="bg-il-dark2 text-il-gray-light text-xs uppercase tracking-widest font-semibold py-2.5 px-4">{group.category}</td>
+                  </tr>
+                  {group.rows.map((row, ri) => (
+                    <tr key={`${group.category}-${ri}`} className={`border-b border-il-border ${ri % 2 === 1 ? "bg-il-violet/[0.02]" : ""}`}>
+                      <td className="text-sm text-il-gray-light py-3 px-4">{row[0]}</td>
+                      {[1, 2, 3].map((ci) => (
+                        <td key={ci} className={`text-sm text-center py-3 px-4 ${ci === 2 ? "bg-il-violet/[0.03]" : ""}`}>
+                          {row[ci] === "✓" ? (
+                            <span className="text-green-400">✓</span>
+                          ) : row[ci] === "✗" ? (
+                            <span className="text-il-border">—</span>
+                          ) : (
+                            <span className="text-il-gray-light">{row[ci]}</span>
+                          )}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div className="px-6">
         <div className="bg-il-dark border border-il-border rounded-2xl p-10 max-w-[900px] mx-auto my-16">
           <h2 className="section-title">Calculate your ROI</h2>
