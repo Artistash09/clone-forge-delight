@@ -4,11 +4,11 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const navItems = [
-  { label: "Database", path: "/database" },
+  { label: "Platform", path: "/database" },
   { label: "Our Data", path: "/our-data" },
-  { label: "Pricing", path: "/pricing" },
+  { label: "Why Us", path: "/why-us" },
   { label: "Case Studies", path: "/case-studies" },
-  { label: "Chrome Extension", path: "/chrome-extension" },
+  { label: "Pricing", path: "/pricing" },
 ];
 
 export default function Navbar() {
