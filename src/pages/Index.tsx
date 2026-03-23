@@ -8,6 +8,7 @@ import CaseStudiesSection from "@/components/CaseStudiesSection";
 import ChromeExtensionSection from "@/components/ChromeExtensionSection";
 import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
+import ToastNotification from "@/components/ToastNotification";
 
 export default function Index() {
   return (
@@ -22,6 +23,7 @@ export default function Index() {
       <ChromeExtensionSection />
       <CTABand />
       <Footer />
+      <ToastNotification />
     </div>
   );
 }

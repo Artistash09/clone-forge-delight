@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png";
 
 const navItems = [
   { label: "Database", path: "/database" },
@@ -33,7 +34,7 @@ export default function Navbar() {
       style={{ background: "rgba(12,1,24,0.96)" }}
     >
       <Link to="/" className="font-display text-lg font-bold text-il-white flex items-center gap-2">
-        <span className="w-2 h-2 bg-il-violet rounded-full inline-block" />
+        <img src={logo} alt="Inbound Labs" className="w-8 h-8 object-contain" />
         inbound labs
       </Link>
 
