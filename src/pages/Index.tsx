@@ -9,21 +9,30 @@ import ChromeExtensionSection from "@/components/ChromeExtensionSection";
 import CTABand from "@/components/CTABand";
 import Footer from "@/components/Footer";
 import ToastNotification from "@/components/ToastNotification";
+import ExitIntentPopup from "@/components/ExitIntentPopup";
 
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <HeroSection />
+      <div className="py-8" />
       <StatsRow />
+      <div className="py-8" />
       <IntegrationsSection />
+      <div className="py-8" />
       <TestimonialsSection />
+      <div className="py-8" />
       <UseCasesSection />
+      <div className="py-8" />
       <CaseStudiesSection />
+      <div className="py-8" />
       <ChromeExtensionSection />
+      <div className="py-8" />
       <CTABand />
       <Footer />
       <ToastNotification />
+      <ExitIntentPopup />
     </div>
   );
 }
