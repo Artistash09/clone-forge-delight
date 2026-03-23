@@ -16,6 +16,7 @@ import CookieBanner from "@/components/CookieBanner";
 export default function Index() {
   return (
     <div className="min-h-screen bg-background">
+      <AnnouncementBar />
       <Navbar />
       <HeroSection />
       <div className="py-8" />
@@ -35,6 +36,7 @@ export default function Index() {
       <Footer />
       <ToastNotification />
       <ExitIntentPopup />
+      <CookieBanner />
     </div>
   );
 }
