@@ -5,34 +5,24 @@ import CTABand from "@/components/CTABand";
 import ToastNotification from "@/components/ToastNotification";
 import CookieBanner from "@/components/CookieBanner";
 import { Link } from "react-router-dom";
-import { CheckCircle, X } from "lucide-react";
 
-const reasons = [
-  { title: "97% Email Accuracy — Guaranteed", desc: "Every email is triple-verified before delivery. Credits only deduct on verified contacts. No bounces, no wasted spend." },
-  { title: "50M+ Verified Direct Mobiles", desc: "Reach decision-makers directly. Our users see a 22% average cold-call connect rate — up from 5% on other platforms." },
-  { title: "Weekly Data Refresh", desc: "Our database refreshes every week. Stale contacts are flagged or removed automatically so you always work with fresh data." },
-  { title: "No Contracts, Cancel Anytime", desc: "Month-to-month plans with no lock-in. Start free with 50 verified lookups. Upgrade only when you're ready." },
-  { title: "GDPR & SOC2 Compliant", desc: "Enterprise-grade compliance out of the box. Data processed in the EU. SOC2-ready infrastructure." },
-  { title: "Credits That Don't Waste", desc: "Pay only for verified contacts. If we can't verify an email or mobile, you keep your credits. Simple as that." },
+const painPoints = [
+  { icon: "⏱️", title: "2+ hours cleaning lists per rep per day", desc: "Your highest-paid people are doing data entry instead of selling. That's not a process problem — it's a data quality problem." },
+  { icon: "📨", title: "Emails bouncing. Domains dying.", desc: "Every bounced email chips away at your domain reputation. One bad list can damage deliverability for months." },
+  { icon: "📞", title: "Calling company numbers, not decision-makers", desc: "Generic company phone numbers route to reception, not the VP of Sales. Direct mobiles change everything." },
 ];
 
-const vsFeatures = [
-  { feature: "Triple-verified emails", us: true, them: false },
-  { feature: "97%+ email accuracy", us: true, them: false },
-  { feature: "50M+ direct mobiles", us: true, them: false },
-  { feature: "Weekly data refresh", us: true, them: false },
-  { feature: "No annual contracts", us: true, them: false },
-  { feature: "Credits only on verified", us: true, them: false },
-  { feature: "GDPR compliant", us: true, them: true },
-  { feature: "Chrome extension", us: true, them: true },
-  { feature: "CRM integrations", us: true, them: true },
-  { feature: "Intent data", us: true, them: false },
+const solutions = [
+  { icon: "🎯", title: "Verified Emails — Every Time", desc: "6-step verification means every email you export is deliverable. Bounce rate drops to under 2%. Your domain reputation stays intact.", stat: "98%", statLabel: "deliverability rate" },
+  { icon: "📱", title: "Direct Mobile Numbers", desc: "Real mobile numbers validated against carrier databases. 30% average pick-up rate vs under 5% on company lines.", stat: "30%", statLabel: "avg. pick-up rate" },
+  { icon: "🔥", title: "In-Market Intent Signals", desc: "Buying intent filters show which accounts are actively researching solutions like yours — so reps call warm, not cold.", stat: "5×", statLabel: "higher reply rate on intent leads" },
 ];
 
-const testimonials = [
-  { quote: "Inbound Labs was the first platform where we didn't have to second-guess the data. Every email, every phone number — it just works.", author: "Josh Whitfield", role: "Founder at CMM Agency", rating: "4.9★ G2" },
-  { quote: "The job change filter helps us reach qualified leads the moment they switch roles — before anyone else does. This alone is worth the entire subscription.", author: "Pete Lipton", role: "Snr. Director of Sales", rating: "5.0★ G2" },
-  { quote: "We tested four enrichment tools side by side. Inbound Labs was the only one where the data didn't need cleaning after.", author: "Sönke Venjacob", role: "Founder · Platinum Agency", rating: "4.8★ G2" },
+const workflow = [
+  { icon: "🎯", title: "Build ICP List", desc: "Filter 280M contacts by industry, title, intent, location" },
+  { icon: "✉️", title: "Verify & Enrich", desc: "Every email and mobile verified before export" },
+  { icon: "🔌", title: "Push to Sequencer", desc: "One click to Outreach, Salesloft, Apollo, or CSV" },
+  { icon: "📈", title: "Book Meetings", desc: "Higher reply rates. More calls answered. More pipeline." },
 ];
 
 export default function WhyUs() {
@@ -41,97 +31,162 @@ export default function WhyUs() {
       <AnnouncementBar />
       <Navbar />
 
+      {/* Breadcrumbs */}
+      <div className="px-6 md:px-10 pt-4 max-w-[1200px] mx-auto">
+        <div className="flex items-center gap-2 text-sm">
+          <Link to="/" className="text-il-gray-light hover:text-il-violet-light">Home</Link>
+          <span className="text-il-violet/30">›</span>
+          <Link to="/" className="text-il-gray-light hover:text-il-violet-light">Use Cases</Link>
+          <span className="text-il-violet/30">›</span>
+          <span className="text-il-white">Sales Teams</span>
+        </div>
+      </div>
+
       {/* Hero */}
-      <section className="relative py-24 px-6 md:px-10 text-center glow-violet">
-        <div className="max-w-[800px] mx-auto">
-          <div className="section-label">WHY INBOUND LABS</div>
-          <h1 className="section-title text-il-white">
-            Better Data. Fair Pricing.<br />No Excuses.
-          </h1>
-          <p className="text-il-text-muted text-lg max-w-[600px] mx-auto mb-8">
-            We built Inbound Labs because we were tired of paying enterprise prices for data that bounced.
-            Here's why 15,000+ teams switched.
+      <section className="relative py-24 px-6 md:px-10 glow-violet">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <div className="inline-block bg-il-violet/10 border border-il-violet/20 text-il-violet text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+              💼 For Sales Teams
+            </div>
+            <h1 className="font-display text-5xl font-extrabold text-il-white leading-[1.1] mb-5 tracking-tight">
+              Book More Meetings.<br />Stop Fighting Bad Data.
+            </h1>
+            <p className="text-il-gray-light text-base leading-relaxed mb-7">
+              Your reps deserve verified emails, direct mobiles, and in-market signals — not 3 hours a day cleaning lists. Inbound Labs gives them everything they need to close.
+            </p>
+            <div className="flex gap-3 flex-wrap mb-5">
+              <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-sm font-semibold rounded-lg hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
+                Start Free Trial
+              </Link>
+              <Link to="/case-studies" className="text-il-white text-sm px-6 py-3.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
+                See a Sales Case Study
+              </Link>
+            </div>
+            <div className="flex gap-3 flex-wrap">
+              <span className="text-sm text-il-gray-light bg-card border border-il-border rounded-full px-3 py-1">✓ Used by 8,000+ sales teams</span>
+              <span className="text-sm text-il-gray-light bg-card border border-il-border rounded-full px-3 py-1">4.8★ on G2</span>
+            </div>
+          </div>
+          <div className="bg-card border border-il-border rounded-2xl flex items-center justify-center p-8">
+            <div className="text-center">
+              <div className="font-display text-7xl font-extrabold text-il-violet">+47%</div>
+              <div className="text-sm text-il-gray-light mt-2">Meeting booking rate</div>
+              <div className="text-[13px] text-il-gray-light mt-4">Average result in first 90 days</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Pain Points */}
+      <section className="py-20 px-6 md:px-10">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="section-label">Sound Familiar?</div>
+          <h2 className="section-title text-il-white">The problems your reps face every day.</h2>
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {painPoints.map((p) => (
+              <div key={p.title} className="bg-card border border-il-border border-l-[3px] border-l-il-violet rounded-xl p-7">
+                <div className="text-2xl mb-3">{p.icon}</div>
+                <h3 className="font-display text-base font-bold text-il-white mb-2">{p.title}</h3>
+                <p className="text-sm text-il-gray-light leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions */}
+      <section className="py-20 px-6 md:px-10 bg-il-dark border-t border-b border-il-border">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="section-label">The Solution</div>
+          <h2 className="section-title text-il-white">How Inbound Labs solves it.</h2>
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {solutions.map((s) => (
+              <div key={s.title} className="bg-card border border-il-border rounded-xl p-7">
+                <div className="text-2xl mb-3">{s.icon}</div>
+                <h3 className="font-display text-base font-bold text-il-white mb-2">{s.title}</h3>
+                <p className="text-sm text-il-gray-light leading-relaxed mb-4">{s.desc}</p>
+                <div className="font-display text-4xl font-extrabold text-il-violet-light">{s.stat}</div>
+                <div className="text-[12px] text-il-gray-light">{s.statLabel}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Case Study - Snyk */}
+      <section className="py-20 px-6 md:px-10">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="section-label">Case Study</div>
+          <h2 className="section-title text-il-white">How Snyk tripled response rates.</h2>
+          <div className="grid md:grid-cols-2 gap-10 mt-10">
+            <div>
+              <div className="font-display text-6xl font-extrabold text-il-violet-light mb-2">300%</div>
+              <div className="text-sm text-il-gray-light mb-5">Increase in email response rate</div>
+              <div className="flex gap-3 flex-wrap">
+                {["50 AEs", "4-6hrs/week prospecting", "From 0.9% → 3.6% reply"].map((t) => (
+                  <span key={t} className="bg-card border border-il-border rounded-lg px-3 py-2 text-[12px] text-il-gray-light">{t}</span>
+                ))}
+              </div>
+            </div>
+            <div>
+              <p className="text-il-gray-light text-base italic leading-relaxed mb-4">
+                "Pete got 50 AEs prospecting 4–6 hours per week. Response rates tripled from 0.9% because the data actually worked."
+              </p>
+              <div className="text-sm text-il-text-muted mb-5">— Pete Lipton, Snr. Director of Sales, Snyk</div>
+              <Link to="/case-studies" className="text-il-violet text-sm font-semibold">Read the full case study →</Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Workflow */}
+      <section className="py-20 px-6 md:px-10 border-t border-il-border">
+        <div className="max-w-[1200px] mx-auto">
+          <div className="section-label">Your Workflow</div>
+          <h2 className="section-title text-il-white">How it fits into your stack.</h2>
+          <div className="grid md:grid-cols-4 gap-6 mt-10 relative">
+            {workflow.map((w, i) => (
+              <div key={w.title} className="text-center">
+                <div className="w-12 h-12 rounded-full border-2 border-il-violet flex items-center justify-center text-xl mx-auto mb-3">{w.icon}</div>
+                <h3 className="font-display text-sm font-bold text-il-white mb-1">{w.title}</h3>
+                <p className="text-[13px] text-il-gray-light">{w.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <div className="text-center py-24 px-6 relative overflow-hidden">
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[500px] glow-violet pointer-events-none" />
+        <div className="relative z-10">
+          <div className="inline-block bg-il-violet/10 border border-il-violet/20 text-il-violet text-sm font-medium px-4 py-1.5 rounded-full mb-6">
+            💼 For Sales Teams
+          </div>
+          <h2 className="font-display font-extrabold leading-[1.1] mb-3 text-il-white" style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-1.5px" }}>
+            Give your reps data<br />that actually works.
+          </h2>
+          <p className="text-il-gray-light text-[17px] mb-9">
+            Join 8,000+ sales teams already booking more meetings with Inbound Labs.
           </p>
-          <div className="flex items-center justify-center gap-4 flex-wrap">
-            <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-sm font-semibold rounded-lg hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
+          <div className="flex gap-3.5 justify-center flex-wrap">
+            <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
               Start Free Trial
             </Link>
-            <Link to="/our-data" className="text-il-white text-sm px-6 py-3.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
-              See Our Data →
-            </Link>
+            <button className="bg-transparent text-il-white border border-il-border px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-dark2 transition-colors">
+              Book a Demo
+            </button>
           </div>
-        </div>
-      </section>
-
-      {/* Reasons Grid */}
-      <section className="py-20 px-6 md:px-10 border-t border-il-border">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {reasons.map((r) => (
-              <div key={r.title} className="bg-card border border-il-border rounded-xl p-7 hover:border-il-violet/30 transition-colors">
-                <CheckCircle size={24} className="text-il-green mb-4" />
-                <h3 className="font-display text-lg font-bold text-il-white mb-2">{r.title}</h3>
-                <p className="text-sm text-il-gray-light leading-relaxed">{r.desc}</p>
-              </div>
+          <div className="flex items-center justify-center gap-5 mt-5 flex-wrap">
+            {["No CC required", "Setup in 2 min", "GDPR"].map((t) => (
+              <span key={t} className="text-sm text-il-gray-light flex items-center gap-1.5">
+                <span className="text-il-green">✓</span> {t}
+              </span>
             ))}
           </div>
         </div>
-      </section>
-
-      {/* Comparison Table */}
-      <section className="py-20 px-6 md:px-10 border-t border-il-border">
-        <div className="max-w-[700px] mx-auto">
-          <div className="text-center mb-10">
-            <div className="section-label">COMPARISON</div>
-            <h2 className="section-title text-il-white">Inbound Labs vs The Rest</h2>
-          </div>
-          <div className="border border-il-border rounded-xl overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-il-border">
-                  <th className="text-left p-4 text-il-gray-light font-medium">Feature</th>
-                  <th className="text-center p-4 text-il-violet font-semibold">Inbound Labs</th>
-                  <th className="text-center p-4 text-il-gray-light font-medium">Others</th>
-                </tr>
-              </thead>
-              <tbody>
-                {vsFeatures.map((f) => (
-                  <tr key={f.feature} className="border-b border-il-border last:border-0">
-                    <td className="p-4 text-il-white">{f.feature}</td>
-                    <td className="p-4 text-center">{f.us ? <CheckCircle size={16} className="text-il-green mx-auto" /> : <X size={16} className="text-il-gray-light mx-auto" />}</td>
-                    <td className="p-4 text-center">{f.them ? <CheckCircle size={16} className="text-il-green mx-auto" /> : <X size={16} className="text-il-gray-light mx-auto" />}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 px-6 md:px-10 border-t border-il-border">
-        <div className="max-w-[1100px] mx-auto">
-          <div className="text-center mb-12">
-            <div className="section-label">TESTIMONIALS</div>
-            <h2 className="section-title text-il-white">Don't Take Our Word For It</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t) => (
-              <div key={t.author} className="bg-card border border-il-border rounded-xl p-7">
-                <p className="text-sm text-il-gray-light leading-relaxed mb-5 italic">"{t.quote}"</p>
-                <div>
-                  <div className="text-sm font-semibold text-il-white">{t.author}</div>
-                  <div className="text-xs text-il-gray-light">{t.role}</div>
-                  <div className="text-xs text-il-violet mt-1">{t.rating}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <div className="py-8" />
-      <CTABand />
+      </div>
       <Footer />
       <ToastNotification />
       <CookieBanner />

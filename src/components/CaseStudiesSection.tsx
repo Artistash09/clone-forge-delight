@@ -1,9 +1,9 @@
 const caseStudies = [
-  { company: "Meritt", metric: "3×", desc: "Weekly pipeline without adding headcount. Same team, three times the output in 60 days." },
-  { company: "StackOptimise", metric: "$1M", desc: "ARR in 18 months trusting one data provider for all client campaigns and internal outbound." },
-  { company: "Founder Led Sales", metric: "22%", desc: "Cold-call connect rate using verified direct mobiles. Up from 5%. Reached decision-makers directly." },
-  { company: "GreyScout", metric: "2.5×", desc: "Faster quota ramp for new SDRs — 4 weeks instead of 10. 15–20 conversations in week one." },
-  { company: "Snyk", metric: "300%", desc: "Email response rate increase with 50 AEs prospecting part-time. Data that actually works." },
+  { company: "Meritt", metric: "3×", desc: "Tripled weekly pipeline from $100K to $300K without adding a single headcount. Same team. Better data." },
+  { company: "StackOptimise", metric: "$1M", desc: "$1M ARR in 18 months using Inbound Labs as the single data provider for all client and internal outbound." },
+  { company: "Founder Led Sales", metric: "22%", desc: "Cold-call connect rate jumped from 5% to 22% with verified direct mobiles. Decision-makers answered." },
+  { company: "GreyScout", metric: "2.5×", desc: "New SDRs ramped to quota in 4 weeks instead of 10. Had 15–20 real conversations in their first week." },
+  { company: "Snyk", metric: "300%", desc: "Response rate tripled from 0.9% to 3.6%. 50 AEs prospecting part-time generated more pipeline than full-time before." },
 ];
 
 export default function CaseStudiesSection() {
@@ -19,12 +19,12 @@ export default function CaseStudiesSection() {
           {caseStudies.map((cs, i) => (
             <div
               key={cs.company}
-              className={`p-7 cursor-pointer hover:bg-card transition-colors ${
+              className={`p-7 cursor-pointer hover:bg-il-violet/5 transition-colors ${
                 i < caseStudies.length - 1 ? "border-r border-il-border" : ""
               }`}
             >
               <div className="text-xs font-semibold text-il-gray-light uppercase tracking-wider mb-2">{cs.company}</div>
-              <div className="font-display text-[40px] font-extrabold text-il-white mb-1.5 tracking-tight leading-none">{cs.metric}</div>
+              <div className="font-display text-[40px] font-extrabold text-il-violet-light mb-1.5 tracking-tight leading-none">{cs.metric}</div>
               <div className="text-sm text-il-gray-light leading-relaxed mb-3">{cs.desc}</div>
               <div className="text-xs text-il-violet flex items-center gap-1">Read story →</div>
             </div>
