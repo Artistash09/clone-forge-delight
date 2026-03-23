@@ -2,6 +2,7 @@ import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
+import LogoTicker from "@/components/LogoTicker";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import UseCasesSection from "@/components/UseCasesSection";
@@ -21,7 +22,7 @@ export default function Index() {
       <HeroSection />
       <div className="py-8" />
       <StatsRow />
-
+      <LogoTicker />
       {/* Featured Testimonial */}
       <div className="bg-il-dark border-b border-il-border py-14 px-10">
         <div className="max-w-[820px] mx-auto">
