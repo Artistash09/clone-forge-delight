@@ -6,61 +6,45 @@ import ToastNotification from "@/components/ToastNotification";
 import CookieBanner from "@/components/CookieBanner";
 import { Link } from "react-router-dom";
 
+const featuredStudy = {
+  company: "Snyk",
+  companyType: "Developer Security Platform · Series E",
+  metric: "300%",
+  metricLabel: "Increase in email response rate",
+  quote: "Pete got 50 AEs prospecting 4–6 hours per week. Response rates tripled from 0.9% because the data actually worked.",
+  author: "— Pete Lipton, Snr. Director of Sales, Snyk",
+};
+
 const caseStudies = [
   {
     company: "Meritt",
     metric: "3×",
-    metricLabel: "Weekly pipeline",
-    industry: "B2B Agency",
-    challenge: "Meritt's sales team was stuck. They needed to scale pipeline without adding headcount, but their existing data provider was delivering stale contacts and bounced emails.",
-    solution: "After switching to Inbound Labs, they built targeted ICP lists in minutes instead of hours. Verified emails meant zero bounces, and direct mobile numbers opened doors that email alone couldn't.",
-    result: "Same team, three times the pipeline output in just 60 days. No new hires. No new tools. Just better data.",
-    quote: "We tripled our weekly pipeline without adding a single person. The data quality difference was immediate.",
-    author: "Head of Sales, Meritt",
+    desc: "Tripled weekly pipeline from $100K to $300K without adding a single headcount. Same team. Better data.",
+    tags: ["RevOps", "Pipeline Growth"],
   },
   {
     company: "StackOptimise",
     metric: "$1M",
-    metricLabel: "ARR in 18 months",
-    industry: "SaaS",
-    challenge: "StackOptimise needed a single, reliable data source for both client campaigns and internal outbound. Managing multiple providers was costly and inconsistent.",
-    solution: "They consolidated everything onto Inbound Labs — one platform for all prospecting. Weekly data refresh kept campaigns fresh, and the enrichment API automated their workflow.",
-    result: "From zero to $1M ARR in 18 months, trusting one data provider for everything.",
-    quote: "We now reach buyers before they even talk to a competitor.",
-    author: "Felix Frank, Founder at StackOptimise",
+    desc: "$1M ARR in 18 months using Inbound Labs as the single data provider for all client and internal outbound.",
+    tags: ["Agency", "ARR Growth"],
   },
   {
     company: "Founder Led Sales",
     metric: "22%",
-    metricLabel: "Cold-call connect rate",
-    industry: "Sales Consulting",
-    challenge: "Their cold-call connect rate was stuck at 5%. Most numbers in their database were switchboards or outdated. Reps were wasting hours dialing wrong numbers.",
-    solution: "Inbound Labs' verified direct mobile numbers changed the game. Every number was validated against carrier databases before delivery.",
-    result: "Connect rate jumped from 5% to 22%. Reps reached decision-makers directly on the first call.",
-    quote: "The difference was night and day. We went from leaving voicemails to having real conversations.",
-    author: "Founder, Founder Led Sales",
+    desc: "Cold-call connect rate jumped from 5% to 22% with verified direct mobiles. Decision-makers answered.",
+    tags: ["Founder", "Connect Rate"],
   },
   {
     company: "GreyScout",
     metric: "2.5×",
-    metricLabel: "Faster quota ramp",
-    industry: "Staffing & Recruitment",
-    challenge: "New SDRs took 10 weeks to ramp. They spent most of their first month learning tools and cleaning data instead of having conversations.",
-    solution: "With Inbound Labs, new reps could build clean prospect lists in minutes on day one. No data cleaning required. Verified contacts meant they could start dialing immediately.",
-    result: "Ramp time dropped from 10 weeks to 4. New SDRs had 15–20 conversations in their first week.",
-    quote: "Our new reps are productive from week one. That's never happened before.",
-    author: "VP Sales, GreyScout",
+    desc: "New SDRs ramped to quota in 4 weeks instead of 10. Had 15–20 real conversations in their first week.",
+    tags: ["Sales Team", "Ramp Speed"],
   },
   {
     company: "Snyk",
     metric: "300%",
-    metricLabel: "Email response rate increase",
-    industry: "Cybersecurity",
-    challenge: "With 50 AEs prospecting part-time, Snyk needed data that actually worked at scale. Low email deliverability was killing their outbound performance.",
-    solution: "Inbound Labs' 97% email accuracy meant dramatically higher deliverability. AEs spent less time on bounced emails and more time on real conversations.",
-    result: "300% increase in email response rates across 50 AEs. Data that actually works at enterprise scale.",
-    quote: "The data quality transformed our outbound program. Our AEs finally trust the contacts they're reaching out to.",
-    author: "Head of Sales Development, Snyk",
+    desc: "Response rate tripled from 0.9% to 3.6%. 50 AEs prospecting part-time generated more pipeline than full-time before.",
+    tags: ["Enterprise", "Reply Rate"],
   },
 ];
 
@@ -70,75 +54,100 @@ export default function CaseStudies() {
       <AnnouncementBar />
       <Navbar />
 
+      {/* Breadcrumbs */}
+      <div className="px-6 md:px-10 pt-4 max-w-[1200px] mx-auto">
+        <div className="flex items-center gap-2 text-sm">
+          <Link to="/" className="text-il-gray-light hover:text-il-violet-light">Home</Link>
+          <span className="text-il-violet/30">›</span>
+          <span className="text-il-white">Case Studies</span>
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="relative py-24 px-6 md:px-10 text-center glow-violet">
         <div className="max-w-[800px] mx-auto">
           <div className="section-label">CASE STUDIES</div>
           <h1 className="section-title text-il-white">
-            Companies Generating Real<br />Revenue with Inbound Labs
+            Real results.<br />Real companies.
           </h1>
           <p className="text-il-text-muted text-lg max-w-[600px] mx-auto mb-8">
-            See how sales teams, agencies, and founders use our data to book more meetings, close more deals, and scale faster.
+            Every number is real. Every quote is unedited. See exactly how companies like yours generate more pipeline with Inbound Labs.
           </p>
         </div>
       </section>
 
-      {/* Metric Cards */}
+      {/* Featured Story */}
       <section className="px-6 md:px-10 pb-16">
-        <div className="max-w-[1000px] mx-auto grid grid-cols-2 md:grid-cols-5 gap-4">
-          {caseStudies.map((cs) => (
-            <div key={cs.company} className="bg-card border border-il-border rounded-xl p-5 text-center hover:border-il-violet/30 transition-colors">
-              <div className="text-xs font-semibold text-il-gray-light uppercase tracking-wider mb-1">{cs.company}</div>
-              <div className="font-display text-3xl font-extrabold text-il-white">{cs.metric}</div>
-              <div className="text-xs text-il-gray-light mt-1">{cs.metricLabel}</div>
+        <div className="max-w-[1100px] mx-auto">
+          <div className="bg-card border border-il-border rounded-2xl overflow-hidden grid md:grid-cols-[1fr_340px]">
+            <div className="p-10 md:p-12">
+              <div className="inline-block bg-il-violet/10 border border-il-violet/30 text-il-violet text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+                Featured Story
+              </div>
+              <div className="font-display text-[72px] font-extrabold text-il-violet leading-none mb-2">{featuredStudy.metric}</div>
+              <div className="text-il-gray-light text-base mb-6">{featuredStudy.metricLabel}</div>
+              <p className="text-il-gray-light text-base italic leading-relaxed mb-4">
+                "{featuredStudy.quote}"
+              </p>
+              <div className="text-sm text-il-text-muted">{featuredStudy.author}</div>
             </div>
-          ))}
+            <div className="bg-il-dark2 flex items-center justify-center p-8 border-l border-il-border">
+              <div className="text-center">
+                <div className="text-5xl mb-4">🔒</div>
+                <div className="font-display text-xl font-bold text-il-white mb-1">{featuredStudy.company}</div>
+                <div className="text-sm text-il-gray-light">{featuredStudy.companyType}</div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Detailed Case Studies */}
+      {/* Case Study Cards */}
       <section className="py-12 px-6 md:px-10">
-        <div className="max-w-[900px] mx-auto space-y-16">
-          {caseStudies.map((cs, i) => (
-            <div key={cs.company} className="bg-card border border-il-border rounded-2xl p-8 md:p-10">
-              <div className="flex items-center gap-3 mb-6">
-                <span className="text-xs bg-il-violet/20 text-il-violet px-3 py-1 rounded-full font-medium">{cs.industry}</span>
-                <span className="text-xs text-il-gray-light">Case Study #{i + 1}</span>
-              </div>
-
-              <div className="flex flex-col md:flex-row md:items-start gap-6 mb-8">
-                <div className="md:w-1/3">
-                  <div className="font-display text-5xl font-extrabold text-il-violet mb-1">{cs.metric}</div>
-                  <div className="text-sm text-il-gray-light">{cs.metricLabel}</div>
-                  <div className="text-lg font-display font-bold text-il-white mt-2">{cs.company}</div>
+        <div className="max-w-[1100px] mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((cs) => (
+              <div key={cs.company + cs.metric} className="bg-card border border-il-border rounded-xl p-7 hover:bg-il-violet/5 transition-colors cursor-pointer">
+                <div className="font-display text-4xl font-extrabold text-il-violet-light mb-2">{cs.metric}</div>
+                <div className="text-sm font-bold text-il-white mb-2">{cs.company}</div>
+                <div className="text-sm text-il-gray-light leading-relaxed mb-4">{cs.desc}</div>
+                <div className="flex gap-2 flex-wrap mb-4">
+                  {cs.tags.map((tag) => (
+                    <span key={tag} className="text-[11px] bg-il-dark2 border border-il-border text-il-gray-light px-2.5 py-1 rounded-full">{tag}</span>
+                  ))}
                 </div>
-                <div className="md:w-2/3 space-y-4">
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-il-gray-light mb-1">Challenge</h4>
-                    <p className="text-sm text-il-text-muted leading-relaxed">{cs.challenge}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-il-gray-light mb-1">Solution</h4>
-                    <p className="text-sm text-il-text-muted leading-relaxed">{cs.solution}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-il-green mb-1">Result</h4>
-                    <p className="text-sm text-il-white leading-relaxed font-medium">{cs.result}</p>
-                  </div>
-                </div>
+                <span className="text-il-violet text-[13px] font-semibold">Read story →</span>
               </div>
+            ))}
 
-              <blockquote className="border-l-2 border-il-violet pl-5">
-                <p className="text-sm text-il-gray-light italic mb-2">"{cs.quote}"</p>
-                <cite className="text-xs text-il-text-muted not-italic">— {cs.author}</cite>
-              </blockquote>
+            {/* Could be your story */}
+            <div className="bg-il-violet/5 border border-il-border border-dashed rounded-xl p-7 flex flex-col items-center justify-center text-center">
+              <div className="text-4xl mb-3">🚀</div>
+              <div className="font-bold text-[15px] text-il-white mb-1.5">Could be your story</div>
+              <div className="text-[13px] text-il-gray-light mb-4">Join 15,000+ companies already generating more pipeline</div>
+              <Link to="/pricing" className="bg-il-violet text-primary-foreground px-5 py-2.5 text-[13px] font-semibold rounded-lg hover:bg-il-violet-light transition-all">
+                Get Started Free
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
       <div className="py-8" />
-      <CTABand />
+      <div className="text-center py-24 px-6 relative overflow-hidden">
+        <div className="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[500px] glow-violet pointer-events-none" />
+        <div className="relative z-10">
+          <h2 className="font-display font-extrabold leading-[1.1] mb-3 text-il-white" style={{ fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-1.5px" }}>
+            Your case study could be next.
+          </h2>
+          <p className="text-il-gray-light text-[17px] mb-9">
+            Start free. See results in 30 days.
+          </p>
+          <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
+            Start Free Trial
+          </Link>
+        </div>
+      </div>
       <Footer />
       <ToastNotification />
       <CookieBanner />

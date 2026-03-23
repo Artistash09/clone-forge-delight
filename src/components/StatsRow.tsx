@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
 const stats = [
-  { target: 280, suffix: "M+", label: "Verified Contacts" },
-  { target: 143, suffix: "M", label: "Verified Emails" },
-  { target: 60, suffix: "M", label: "Direct Mobiles" },
-  { target: 98, suffix: "%", label: "Email Deliverability" },
+  { target: 98, suffix: "%", label: "Email accuracy rate" },
+  { target: 143, suffix: "M", label: "Verified email addresses" },
+  { target: 280, suffix: "M", label: "Total B2B contacts" },
+  { target: 30, suffix: "%", label: "Mobile pick-up rate" },
 ];
 
 function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) {
