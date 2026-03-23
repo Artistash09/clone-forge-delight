@@ -69,6 +69,12 @@ const plans = [
 
 export default function Pricing() {
   const [period, setPeriod] = useState<"monthly" | "annual">("monthly");
+  const [reps, setReps] = useState(5);
+  const [dealSize, setDealSize] = useState(15000);
+
+  const extraMeetings = reps * 8;
+  const pipelineAdded = Math.round(extraMeetings * (dealSize * 0.15));
+  const roiPercent = Math.round(((pipelineAdded * 0.2) / 149) * 100);
 
   return (
     <div className="min-h-screen bg-background">
@@ -173,6 +179,65 @@ export default function Pricing() {
               </div>
             ))}
           </div>
+        </div>
+      </div>
+
+      {/* ROI Calculator */}
+      <div className="px-6">
+        <div className="bg-il-dark border border-il-border rounded-2xl p-10 max-w-[900px] mx-auto my-16">
+          <h2 className="section-title">Calculate your ROI</h2>
+          <p className="text-il-gray-light text-sm mb-8">See what Inbound Labs is worth to your team before you pay a cent.</p>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-10">
+            <div>
+              <div className="flex justify-between mb-2">
+                <label className="text-il-white text-sm font-semibold">SDRs / sales reps</label>
+                <span className="text-il-violet-light font-semibold text-sm">{reps} reps</span>
+              </div>
+              <input
+                type="range"
+                min={1}
+                max={50}
+                value={reps}
+                onChange={(e) => setReps(Number(e.target.value))}
+                className="w-full"
+                style={{ accentColor: "hsl(var(--il-violet))" }}
+              />
+            </div>
+            <div>
+              <div className="flex justify-between mb-2">
+                <label className="text-il-white text-sm font-semibold">Average deal size ($)</label>
+                <span className="text-il-violet-light font-semibold text-sm">${dealSize.toLocaleString()}</span>
+              </div>
+              <input
+                type="range"
+                min={1000}
+                max={100000}
+                step={1000}
+                value={dealSize}
+                onChange={(e) => setDealSize(Number(e.target.value))}
+                className="w-full"
+                style={{ accentColor: "hsl(var(--il-violet))" }}
+              />
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-5 mb-6">
+            <div className="bg-background border border-il-border rounded-xl p-6 text-center">
+              <div className="text-il-violet-light font-display text-4xl font-extrabold">{extraMeetings}</div>
+              <div className="text-il-gray-light text-sm mt-2">Extra meetings/month</div>
+            </div>
+            <div className="bg-background border border-il-border rounded-xl p-6 text-center">
+              <div className="text-il-violet-light font-display text-4xl font-extrabold">${pipelineAdded.toLocaleString()}</div>
+              <div className="text-il-gray-light text-sm mt-2">Pipeline added/month</div>
+            </div>
+            <div className="bg-background border border-il-border rounded-xl p-6 text-center">
+              <div className="text-il-violet-light font-display text-4xl font-extrabold">{roiPercent}%</div>
+              <div className="text-il-gray-light text-sm mt-2">ROI on subscription</div>
+            </div>
+          </div>
+
+          <p className="text-il-gray-light/50 text-xs text-center">Estimates based on average customer results. Actual results vary.</p>
         </div>
       </div>
 
