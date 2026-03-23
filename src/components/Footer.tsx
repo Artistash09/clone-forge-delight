@@ -51,7 +51,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-6 gap-10 pb-12 border-b border-il-border">
           <div className="col-span-2">
             <Link to="/" className="font-display text-[17px] font-bold text-il-white flex items-center gap-2 mb-3">
-              <span className="w-2 h-2 bg-il-violet rounded-full inline-block" />
+              <img src={logo} alt="Inbound Labs" className="w-7 h-7 object-contain" />
               inbound labs
             </Link>
             <div className="text-sm text-il-gray-light leading-relaxed mb-5 max-w-[280px]">
