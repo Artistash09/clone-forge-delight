@@ -85,7 +85,7 @@ export default function Index() {
       <div className="py-8" />
       <TestimonialsSection />
       <div className="py-8" />
-      <UseCasesSection />
+      <UseCasesTabs />
       <div className="py-8" />
       <CaseStudiesSection />
       <div className="py-8" />
