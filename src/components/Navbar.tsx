@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import logo from "@/assets/logo.png";
+import BookDemoModal from "@/components/BookDemoModal";
 
 const navItems = [
   { label: "Platform", path: "/database" },
@@ -14,6 +15,7 @@ const navItems = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [demoOpen, setDemoOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -27,6 +29,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
+    <>
     <nav
       className={`sticky top-0 z-50 backdrop-blur-xl border-b border-il-border px-6 md:px-10 flex items-center justify-between h-16 transition-shadow ${
         scrolled ? "shadow-[0_4px_40px_rgba(0,0,0,0.4)]" : ""
@@ -60,7 +63,7 @@ export default function Navbar() {
         <button className="text-il-text-muted text-sm px-3.5 py-2 rounded-md hover:text-il-white hover:bg-il-dark2 transition-colors">
           Sign in
         </button>
-        <button className="text-il-white text-sm px-4 py-2.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
+        <button onClick={() => setDemoOpen(true)} className="text-il-white text-sm px-4 py-2.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
           Book Demo
         </button>
         <Link
@@ -97,5 +100,7 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
+    </>
   );
 }

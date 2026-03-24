@@ -1,9 +1,11 @@
+import { useState } from "react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTABand from "@/components/CTABand";
 import ToastNotification from "@/components/ToastNotification";
 import CookieBanner from "@/components/CookieBanner";
+import BookDemoModal from "@/components/BookDemoModal";
 import { Link } from "react-router-dom";
 
 const painPoints = [
@@ -25,7 +27,7 @@ const workflow = [
   { icon: "📈", title: "Book Meetings", desc: "Higher reply rates. More calls answered. More pipeline." },
 ];
 
-export default function WhyUs() {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -174,7 +176,7 @@ export default function WhyUs() {
             <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
               Start Free Trial
             </Link>
-            <button className="bg-transparent text-il-white border border-il-border px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-dark2 transition-colors">
+            <button onClick={() => setDemoOpen(true)} className="bg-transparent text-il-white border border-il-border px-7 py-3.5 text-base font-semibold rounded-[10px] hover:bg-il-dark2 transition-colors">
               Book a Demo
             </button>
           </div>
@@ -190,6 +192,7 @@ export default function WhyUs() {
       <Footer />
       <ToastNotification />
       <CookieBanner />
+      <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }

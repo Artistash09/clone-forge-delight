@@ -1,8 +1,10 @@
+import { useState } from "react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastNotification from "@/components/ToastNotification";
 import CookieBanner from "@/components/CookieBanner";
+import BookDemoModal from "@/components/BookDemoModal";
 import { Link } from "react-router-dom";
 import { Search, Filter, Download, Zap, Mail, Phone, Building, Globe, Users, Shield, CheckCircle } from "lucide-react";
 
@@ -22,7 +24,7 @@ const stats = [
   { value: "15K+", label: "Companies Trust Us" },
 ];
 
-export default function Database() {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
@@ -52,7 +54,7 @@ export default function Database() {
             <Link to="/pricing" className="bg-il-violet text-primary-foreground px-7 py-3.5 text-sm font-semibold rounded-lg hover:bg-il-violet-light transition-all hover:-translate-y-0.5">
               Start Free Trial
             </Link>
-            <button className="text-il-white text-sm px-6 py-3.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
+            <button onClick={() => setDemoOpen(true)} className="text-il-white text-sm px-6 py-3.5 rounded-lg border border-il-border hover:border-il-violet/40 transition-colors font-medium">
               Book a Demo
             </button>
           </div>
@@ -206,6 +208,7 @@ export default function Database() {
       <Footer />
       <ToastNotification />
       <CookieBanner />
+      <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }
