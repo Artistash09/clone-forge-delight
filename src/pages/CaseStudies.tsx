@@ -84,26 +84,28 @@ export default function CaseStudies() {
       {/* Featured Story */}
       <section className="px-6 md:px-10 pb-16">
         <div className="max-w-[1100px] mx-auto">
-          <div className="bg-card border border-il-border rounded-2xl overflow-hidden grid md:grid-cols-[1fr_340px]">
-            <div className="p-10 md:p-12">
-              <div className="inline-block bg-il-violet/10 border border-il-violet/30 text-il-violet text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
-                Featured Story
+          <Link to="/case-studies/snyk" className="block">
+            <div className="bg-card border border-il-border rounded-2xl overflow-hidden grid md:grid-cols-[1fr_340px] hover:bg-il-violet/5 transition-colors cursor-pointer">
+              <div className="p-10 md:p-12">
+                <div className="inline-block bg-il-violet/10 border border-il-violet/30 text-il-violet text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-6">
+                  Featured Story
+                </div>
+                <div className="font-display text-[72px] font-extrabold text-il-violet leading-none mb-2">{featuredStudy.metric}</div>
+                <div className="text-il-gray-light text-base mb-6">{featuredStudy.metricLabel}</div>
+                <p className="text-il-gray-light text-base italic leading-relaxed mb-4">
+                  "{featuredStudy.quote}"
+                </p>
+                <div className="text-sm text-il-text-muted">{featuredStudy.author}</div>
               </div>
-              <div className="font-display text-[72px] font-extrabold text-il-violet leading-none mb-2">{featuredStudy.metric}</div>
-              <div className="text-il-gray-light text-base mb-6">{featuredStudy.metricLabel}</div>
-              <p className="text-il-gray-light text-base italic leading-relaxed mb-4">
-                "{featuredStudy.quote}"
-              </p>
-              <div className="text-sm text-il-text-muted">{featuredStudy.author}</div>
-            </div>
-            <div className="bg-il-dark2 flex items-center justify-center p-8 border-l border-il-border">
-              <div className="text-center">
-                <div className="text-5xl mb-4">🔒</div>
-                <div className="font-display text-xl font-bold text-il-white mb-1">{featuredStudy.company}</div>
-                <div className="text-sm text-il-gray-light">{featuredStudy.companyType}</div>
+              <div className="bg-il-dark2 flex items-center justify-center p-8 border-l border-il-border">
+                <div className="text-center">
+                  <div className="text-5xl mb-4">🔒</div>
+                  <div className="font-display text-xl font-bold text-il-white mb-1">{featuredStudy.company}</div>
+                  <div className="text-sm text-il-gray-light">{featuredStudy.companyType}</div>
+                </div>
               </div>
             </div>
-          </div>
+          </Link>
         </div>
       </section>
 

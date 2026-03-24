@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "@/assets/logo.png";
 import BookDemoModal from "@/components/BookDemoModal";
 
@@ -16,6 +16,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [demoOpen, setDemoOpen] = useState(false);
+  const [toolsOpen, setToolsOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -57,6 +58,42 @@ export default function Navbar() {
             </Link>
           </li>
         ))}
+        {/* Tools Dropdown */}
+        <li className="relative">
+          <button
+            onClick={() => setToolsOpen(!toolsOpen)}
+            className={`text-sm px-3.5 py-2 rounded-md transition-colors flex items-center gap-1 ${
+              toolsOpen || ["/email-finder", "/domain-search", "/chrome-extension"].includes(location.pathname)
+                ? "text-il-white"
+                : "text-il-text-muted hover:text-il-white hover:bg-il-dark2"
+            }`}
+          >
+            Tools
+            <ChevronDown size={16} className={toolsOpen ? "rotate-180" : ""} />
+          </button>
+          {toolsOpen && (
+            <div className="absolute top-full left-0 mt-1 bg-il-dark2 border border-il-border rounded-lg shadow-lg py-2 min-w-[160px] z-50">
+              <Link
+                to="/email-finder"
+                className="block px-4 py-2 text-sm text-il-gray-light hover:text-il-white hover:bg-il-dark transition-colors"
+              >
+                Email Finder
+              </Link>
+              <Link
+                to="/domain-search"
+                className="block px-4 py-2 text-sm text-il-gray-light hover:text-il-white hover:bg-il-dark transition-colors"
+              >
+                Domain Search
+              </Link>
+              <Link
+                to="/chrome-extension"
+                className="block px-4 py-2 text-sm text-il-gray-light hover:text-il-white hover:bg-il-dark transition-colors"
+              >
+                Chrome Extension
+              </Link>
+            </div>
+          )}
+        </li>
       </ul>
 
       <div className="hidden lg:flex items-center gap-3">
@@ -91,6 +128,27 @@ export default function Navbar() {
               {item.label}
             </Link>
           ))}
+          <div className="border-t border-il-border pt-3 mt-2">
+            <div className="text-il-gray-light text-xs uppercase tracking-widest mb-2">Tools</div>
+            <Link
+              to="/email-finder"
+              className="text-il-text-muted hover:text-il-white text-sm py-2 block"
+            >
+              Email Finder
+            </Link>
+            <Link
+              to="/domain-search"
+              className="text-il-text-muted hover:text-il-white text-sm py-2 block"
+            >
+              Domain Search
+            </Link>
+            <Link
+              to="/chrome-extension"
+              className="text-il-text-muted hover:text-il-white text-sm py-2 block"
+            >
+              Chrome Extension
+            </Link>
+          </div>
           <Link
             to="/pricing"
             className="bg-il-violet text-primary-foreground px-5 py-3 text-sm font-semibold rounded-lg text-center mt-2"

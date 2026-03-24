@@ -6,12 +6,12 @@ const columns = [
     title: "Platform",
     links: [
       { label: "B2B Database", path: "/database" },
-      { label: "Email Finder", path: "/" },
+      { label: "Email Finder", path: "/email-finder" },
       { label: "Mobile Numbers", path: "/" },
-      { label: "Domain Search", path: "/" },
+      { label: "Domain Search", path: "/domain-search" },
       { label: "Chrome Extension", path: "/chrome-extension" },
       { label: "Integrations", path: "/" },
-      { label: "API Docs", path: "/" },
+      { label: "API Docs", path: "/api-docs" },
     ],
   },
   {

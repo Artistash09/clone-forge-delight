@@ -24,6 +24,10 @@ import EmailFinder from "./pages/EmailFinder.tsx";
 import DomainSearch from "./pages/DomainSearch.tsx";
 import TrustCenter from "./pages/TrustCenter.tsx";
 import Affiliate from "./pages/Affiliate.tsx";
+import ChromeExtension from "./pages/ChromeExtension.tsx";
+import Changelog from "./pages/Changelog.tsx";
+import ApiDocs from "./pages/ApiDocs.tsx";
+import Blog from "./pages/Blog.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -56,6 +60,10 @@ const App = () => (
           <Route path="/domain-search" element={<DomainSearch />} />
           <Route path="/trust-center" element={<TrustCenter />} />
           <Route path="/affiliate" element={<Affiliate />} />
+          <Route path="/chrome-extension" element={<ChromeExtension />} />
+          <Route path="/changelog" element={<Changelog />} />
+          <Route path="/api-docs" element={<ApiDocs />} />
+          <Route path="/blog" element={<Blog />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
