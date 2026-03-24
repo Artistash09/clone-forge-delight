@@ -28,6 +28,7 @@ import ChromeExtension from "./pages/ChromeExtension.tsx";
 import Changelog from "./pages/Changelog.tsx";
 import ApiDocs from "./pages/ApiDocs.tsx";
 import Blog from "./pages/Blog.tsx";
+import BlogPost from "./pages/BlogPost.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -64,6 +65,7 @@ const App = () => (
           <Route path="/changelog" element={<Changelog />} />
           <Route path="/api-docs" element={<ApiDocs />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
