@@ -29,6 +29,7 @@ export default function Navbar() {
   }, [location.pathname]);
 
   return (
+    <>
     <nav
       className={`sticky top-0 z-50 backdrop-blur-xl border-b border-il-border px-6 md:px-10 flex items-center justify-between h-16 transition-shadow ${
         scrolled ? "shadow-[0_4px_40px_rgba(0,0,0,0.4)]" : ""
