@@ -32,7 +32,7 @@ export default function Index() {
             Inbound Labs was the first platform where we didn't have to second-guess the data. Every email, every phone number — it just works. It's now the backbone of our entire outbound operation.
           </p>
           <div className="flex items-center gap-3.5">
-            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#e63946] to-[#a855f7] flex items-center justify-center text-lg">👤</div>
+            <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#e63946] to-[#a855f7] flex items-center justify-center text-sm font-bold text-white">JW</div>
             <div>
               <div className="text-[15px] font-bold text-il-white">Josh Whitfield</div>
               <div className="text-[13px] text-il-gray-light">Founder at CMM Agency · 4.9★ G2 review</div>
