@@ -99,5 +99,7 @@ export default function Navbar() {
         </div>
       )}
     </nav>
+    <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
+    </>
   );
 }
