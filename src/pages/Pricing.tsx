@@ -14,7 +14,7 @@ const plans = [
     ctaStyle: "border border-il-border text-il-white hover:bg-il-dark2",
     featured: false,
     features: [
-      { text: "500 credits/month", included: true, bold: true },
+      { text: "2,000 credits/month", included: true, bold: true },
       { text: "Verified email lookup", included: true },
       { text: "Mobile number finder", included: true },
       { text: "Chrome extension", included: true },
@@ -34,7 +34,7 @@ const plans = [
     ctaStyle: "bg-il-violet text-primary-foreground hover:bg-il-violet-light",
     featured: true,
     features: [
-      { text: "2,500 credits/month", included: true, bold: true },
+      { text: "10,000 credits/month", included: true, bold: true },
       { text: "Everything in Starter", included: true },
       { text: "CRM integrations (HubSpot, SF)", included: true },
       { text: "Intent data filters", included: true },
@@ -168,7 +168,7 @@ export default function Pricing() {
           </p>
           <div className="flex gap-5 flex-wrap">
             {[
-              ["500 contacts", "= 500 credits max"],
+              ["2,000 contacts", "= 2,000 credits max"],
               ["Email only", "= 1 credit per email"],
               ["Email + Mobile", "= 2 credits per person"],
             ].map(([title, sub]) => (
@@ -201,7 +201,7 @@ export default function Pricing() {
             <tbody>
               {[
                 { category: "Credits & Usage", rows: [
-                  ["Monthly credits", "500", "2,500", "Unlimited"],
+                  ["Monthly credits", "2,000", "10,000", "Unlimited"],
                   ["Credit rollover", "✗", "3 months", "12 months"],
                   ["Bulk enrichment", "✗", "✓", "✓"],
                 ]},
