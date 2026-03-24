@@ -50,21 +50,22 @@ export default function IntegrationsSection() {
           <Link to="/database" className="text-il-violet text-sm font-semibold">Explore all integrations →</Link>
           <div className="flex flex-wrap gap-2.5 mt-7">
             {[
-              { emoji: "🟠", title: "HubSpot" },
-              { emoji: "☁️", title: "Salesforce" },
-              { emoji: "⚡", title: "Outreach" },
-              { emoji: "🎯", title: "Salesloft" },
-              { emoji: "🚀", title: "Apollo" },
-              { emoji: "⚡", title: "Zapier" },
-              { emoji: "🔧", title: "Make" },
-              { emoji: "🏺", title: "Clay" },
-              { emoji: "📊", title: "Pipedrive" },
-              { emoji: "💬", title: "Slack" },
-              { emoji: "📧", title: "Gmail" },
-              { emoji: "+18", title: "More" },
+              { abbr: "HS", title: "HubSpot", color: "text-orange-400" },
+              { abbr: "SF", title: "Salesforce", color: "text-blue-400" },
+              { abbr: "OR", title: "Outreach", color: "text-purple-400" },
+              { abbr: "SL", title: "Salesloft", color: "text-teal-400" },
+              { abbr: "AP", title: "Apollo", color: "text-indigo-400" },
+              { abbr: "ZP", title: "Zapier", color: "text-orange-300" },
+              { abbr: "MK", title: "Make", color: "text-violet-400" },
+              { abbr: "CL", title: "Clay", color: "text-pink-400" },
+              { abbr: "PD", title: "Pipedrive", color: "text-green-400" },
+              { abbr: "SL", title: "Slack", color: "text-yellow-400" },
+              { abbr: "GM", title: "Gmail", color: "text-red-400" },
+              { abbr: "+18", title: "More", color: "text-il-gray-light" },
             ].map((logo, i) => (
-              <div key={i} className="w-11 h-11 bg-card border border-il-border rounded-[10px] flex items-center justify-center text-lg hover:border-il-violet/40 hover:scale-105 transition-all cursor-pointer" title={logo.title}>
-                {logo.emoji === "+18" ? <span className="text-xs text-il-gray-light font-semibold">+18</span> : logo.emoji}
+              <div key={i} className="w-12 h-12 bg-il-dark2 border border-il-border rounded-[10px] flex flex-col items-center justify-center hover:border-il-violet/40 hover:scale-105 transition-all cursor-pointer" title={logo.title}>
+                <span className={`text-[11px] font-bold ${logo.color}`}>{logo.abbr}</span>
+                <span className="text-[8px] text-il-gray-light mt-0.5">{logo.title}</span>
               </div>
             ))}
           </div>
