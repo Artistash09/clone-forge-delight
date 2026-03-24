@@ -27,7 +27,7 @@ const workflow = [
   { icon: "📈", title: "Book Meetings", desc: "Higher reply rates. More calls answered. More pipeline." },
 ];
 
-export default function WhyUs() {
+  const [demoOpen, setDemoOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
       <AnnouncementBar />
