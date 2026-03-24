@@ -14,8 +14,22 @@ function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    
+    // Fallback for browsers that don't support IntersectionObserver
+    if (!window.IntersectionObserver) {
+      let current = 0;
+      const step = target / 60;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        setValue(Math.floor(current));
+        if (current >= target) clearInterval(timer);
+      }, 20);
+      return;
+    }
+    
     const obs = new IntersectionObserver(
       ([entry]) => {
+        console.log('StatsRow IntersectionObserver:', entry.isIntersecting, entry.intersectionRatio);
         if (entry.isIntersecting) {
           let current = 0;
           const step = target / 60;
@@ -27,7 +41,7 @@ function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) 
           obs.unobserve(el);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.1 }
     );
     obs.observe(el);
     return () => obs.disconnect();
