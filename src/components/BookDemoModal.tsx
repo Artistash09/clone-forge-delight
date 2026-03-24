@@ -11,7 +11,7 @@ const USE_CASE_OPTIONS = [
   "Other",
 ];
 
-const GOOGLE_SHEET_WEBHOOK_URL = ""; // User sets this
+const GOOGLE_SHEET_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyeaMWUXkxvusjooAIfEtni-EuNkMfIhx61YrwleuzsXRbZbWLzVG27RMTb0rvJPWf4gQ/exec";
 
 interface BookDemoModalProps {
   open: boolean;
