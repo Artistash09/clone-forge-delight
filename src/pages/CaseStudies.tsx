@@ -112,7 +112,7 @@ export default function CaseStudies() {
         <div className="max-w-[1100px] mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs) => (
-              <div key={cs.company + cs.metric} className="bg-card border border-il-border rounded-xl p-7 hover:bg-il-violet/5 transition-colors cursor-pointer">
+              <Link to={cs.link} key={cs.company + cs.metric} className="bg-card border border-il-border rounded-xl p-7 hover:bg-il-violet/5 transition-colors cursor-pointer block">
                 <div className="font-display text-4xl font-extrabold text-il-violet-light mb-2">{cs.metric}</div>
                 <div className="text-sm font-bold text-il-white mb-2">{cs.company}</div>
                 <div className="text-sm text-il-gray-light leading-relaxed mb-4">{cs.desc}</div>
@@ -122,7 +122,7 @@ export default function CaseStudies() {
                   ))}
                 </div>
                 <span className="text-il-violet text-[13px] font-semibold">Read story →</span>
-              </div>
+              </Link>
             ))}
 
             {/* Could be your story */}
