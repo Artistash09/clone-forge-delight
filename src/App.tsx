@@ -15,6 +15,11 @@ import VsCognism from "./pages/VsCognism.tsx";
 import VsLusha from "./pages/VsLusha.tsx";
 import VsHunter from "./pages/VsHunter.tsx";
 import VsRocketReach from "./pages/VsRocketReach.tsx";
+import CaseStudySnyk from "./pages/CaseStudySnyk.tsx";
+import CaseStudyMeritt from "./pages/CaseStudyMeritt.tsx";
+import CaseStudyStackOptimise from "./pages/CaseStudyStackOptimise.tsx";
+import CaseStudyFounderLedSales from "./pages/CaseStudyFounderLedSales.tsx";
+import CaseStudyGreyScout from "./pages/CaseStudyGreyScout.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -38,6 +43,11 @@ const App = () => (
           <Route path="/vs-lusha" element={<VsLusha />} />
           <Route path="/vs-hunter" element={<VsHunter />} />
           <Route path="/vs-rocketreach" element={<VsRocketReach />} />
+          <Route path="/case-studies/snyk" element={<CaseStudySnyk />} />
+          <Route path="/case-studies/meritt" element={<CaseStudyMeritt />} />
+          <Route path="/case-studies/stackoptimise" element={<CaseStudyStackOptimise />} />
+          <Route path="/case-studies/founder-led-sales" element={<CaseStudyFounderLedSales />} />
+          <Route path="/case-studies/greyscout" element={<CaseStudyGreyScout />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
