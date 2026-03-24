@@ -21,30 +21,35 @@ const caseStudies = [
     metric: "3×",
     desc: "Tripled weekly pipeline from $100K to $300K without adding a single headcount. Same team. Better data.",
     tags: ["RevOps", "Pipeline Growth"],
+    link: "/case-studies/meritt",
   },
   {
     company: "StackOptimise",
     metric: "$1M",
     desc: "$1M ARR in 18 months using Inbound Labs as the single data provider for all client and internal outbound.",
     tags: ["Agency", "ARR Growth"],
+    link: "/case-studies/stackoptimise",
   },
   {
     company: "Founder Led Sales",
     metric: "22%",
     desc: "Cold-call connect rate jumped from 5% to 22% with verified direct mobiles. Decision-makers answered.",
     tags: ["Founder", "Connect Rate"],
+    link: "/case-studies/founder-led-sales",
   },
   {
     company: "GreyScout",
     metric: "2.5×",
     desc: "New SDRs ramped to quota in 4 weeks instead of 10. Had 15–20 real conversations in their first week.",
     tags: ["Sales Team", "Ramp Speed"],
+    link: "/case-studies/greyscout",
   },
   {
     company: "Snyk",
     metric: "300%",
     desc: "Response rate tripled from 0.9% to 3.6%. 50 AEs prospecting part-time generated more pipeline than full-time before.",
     tags: ["Enterprise", "Reply Rate"],
+    link: "/case-studies/snyk",
   },
 ];
 
