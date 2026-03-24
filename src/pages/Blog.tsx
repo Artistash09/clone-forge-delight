@@ -5,13 +5,20 @@ import Footer from "@/components/Footer";
 import { sanityClient } from "@/lib/sanity";
 import { POSTS_QUERY, SanityPost } from "@/lib/queries";
 
-const categories = ['All', 'Cold Email', 'Prospecting', 'Data & Tools', 'LinkedIn', 'Templates'];
+const categories = [
+  { label: 'All', value: 'all' },
+  { label: 'Cold Email', value: 'cold-email' },
+  { label: 'Prospecting', value: 'prospecting' },
+  { label: 'Data & Tools', value: 'data' },
+  { label: 'LinkedIn', value: 'linkedin' },
+  { label: 'Templates', value: 'templates' },
+];
 
 const getCategoryColor = (category: string) => {
   switch (category.toLowerCase()) {
-    case 'cold email': return 'bg-blue-900/30';
+    case 'cold-email': return 'bg-blue-900/30';
     case 'prospecting': return 'bg-violet-900/30';
-    case 'data & tools': return 'bg-green-900/30';
+    case 'data': return 'bg-green-900/30';
     case 'linkedin': return 'bg-blue-800/30';
     case 'templates': return 'bg-orange-900/30';
     default: return 'bg-il-violet/10';
@@ -20,9 +27,9 @@ const getCategoryColor = (category: string) => {
 
 const getCategoryEmoji = (category: string) => {
   switch (category.toLowerCase()) {
-    case 'cold email': return '📧';
+    case 'cold-email': return '📧';
     case 'prospecting': return '🎯';
-    case 'data & tools': return '📊';
+    case 'data': return '📊';
     case 'linkedin': return '💼';
     case 'templates': return '📝';
     default: return '📄';
@@ -41,7 +48,7 @@ export default function Blog() {
   const [posts, setPosts] = useState<SanityPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -59,8 +66,8 @@ export default function Blog() {
     fetchPosts();
   }, []);
 
-  const filteredPosts = activeCategory === 'All' 
-    ? posts 
+  const filteredPosts = activeCategory === 'all'
+    ? posts
     : posts.filter(post => post.category === activeCategory);
 
   const featuredPost = filteredPosts[0];
@@ -80,7 +87,7 @@ export default function Blog() {
           </p>
           <div className="flex justify-center gap-2 flex-wrap mt-6">
             {categories.map(category => (
-              <div key={category} className="h-8 w-20 bg-il-dark2 rounded-lg animate-pulse" />
+              <div key={category.value} className="h-8 w-20 bg-il-dark2 rounded-lg animate-pulse" />
             ))}
           </div>
         </section>
@@ -139,15 +146,15 @@ export default function Blog() {
         <div className="flex justify-center gap-2 flex-wrap mt-6">
           {categories.map(category => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
+              key={category.value}
+              onClick={() => setActiveCategory(category.value)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all border ${
-                activeCategory === category
+                activeCategory === category.value
                   ? 'bg-il-violet/10 border-il-violet text-il-violet-light'
                   : 'border-il-border text-il-gray-light hover:text-il-white'
               }`}
             >
-              {category}
+              {category.label}
             </button>
           ))}
         </div>
