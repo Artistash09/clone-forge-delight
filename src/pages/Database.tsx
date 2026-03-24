@@ -1,8 +1,10 @@
+import { useState } from "react";
 import AnnouncementBar from "@/components/AnnouncementBar";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ToastNotification from "@/components/ToastNotification";
 import CookieBanner from "@/components/CookieBanner";
+import BookDemoModal from "@/components/BookDemoModal";
 import { Link } from "react-router-dom";
 import { Search, Filter, Download, Zap, Mail, Phone, Building, Globe, Users, Shield, CheckCircle } from "lucide-react";
 
