@@ -12,6 +12,23 @@ export default defineConfig(({ mode }) => ({
       overlay: false,
     },
   },
+  build: {
+    commonjsOptions: {
+      transformMixedEsModules: true,
+    },
+  },
+  optimizeDeps: {
+    include: [
+      "sanity",
+      "@sanity/vision",
+      "@sanity/ui",
+      "@sanity/icons",
+      "styled-components",
+    ],
+    esbuildOptions: {
+      target: "es2020",
+    },
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {

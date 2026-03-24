@@ -23,6 +23,7 @@ import CaseStudyGreyScout from "./pages/CaseStudyGreyScout.tsx";
 import EmailFinder from "./pages/EmailFinder.tsx";
 import DomainSearch from "./pages/DomainSearch.tsx";
 import TrustCenter from "./pages/TrustCenter.tsx";
+import Studio from "./pages/Studio.tsx";
 import Affiliate from "./pages/Affiliate.tsx";
 import ChromeExtension from "./pages/ChromeExtension.tsx";
 import Changelog from "./pages/Changelog.tsx";
@@ -60,6 +61,7 @@ const App = () => (
           <Route path="/email-finder" element={<EmailFinder />} />
           <Route path="/domain-search" element={<DomainSearch />} />
           <Route path="/trust-center" element={<TrustCenter />} />
+          <Route path="/studio/*" element={<Studio />} />
           <Route path="/affiliate" element={<Affiliate />} />
           <Route path="/chrome-extension" element={<ChromeExtension />} />
           <Route path="/changelog" element={<Changelog />} />
