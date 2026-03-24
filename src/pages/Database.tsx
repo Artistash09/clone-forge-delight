@@ -24,6 +24,7 @@ const stats = [
   { value: "15K+", label: "Companies Trust Us" },
 ];
 
+export default function Database() {
   const [demoOpen, setDemoOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background">
