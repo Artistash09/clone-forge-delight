@@ -15,6 +15,11 @@ import VsCognism from "./pages/VsCognism.tsx";
 import VsLusha from "./pages/VsLusha.tsx";
 import VsHunter from "./pages/VsHunter.tsx";
 import VsRocketReach from "./pages/VsRocketReach.tsx";
+import CaseStudySnyk from "./pages/CaseStudySnyk.tsx";
+import CaseStudyMeritt from "./pages/CaseStudyMeritt.tsx";
+import CaseStudyStackOptimise from "./pages/CaseStudyStackOptimise.tsx";
+import CaseStudyFounderLedSales from "./pages/CaseStudyFounderLedSales.tsx";
+import CaseStudyGreyScout from "./pages/CaseStudyGreyScout.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
