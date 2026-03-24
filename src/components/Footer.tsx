@@ -60,7 +60,7 @@ export default function Footer() {
   return (
     <footer className="bg-il-dark border-t border-il-border py-16 px-6 md:px-10">
       <div className="max-w-[1200px] mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-10 pb-12 border-b border-il-border">
+        <div className="grid grid-cols-2 md:grid-cols-7 gap-10 pb-12 border-b border-il-border">
           <div className="col-span-2">
             <Link to="/" className="font-display text-[17px] font-bold text-il-white flex items-center gap-2 mb-3">
               <img src={logo} alt="Inbound Labs" className="w-7 h-7 object-contain" />
