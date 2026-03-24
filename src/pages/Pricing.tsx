@@ -323,21 +323,3 @@ export default function Pricing() {
     </div>
   );
 }
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-il-border">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center py-5 text-left text-sm font-semibold text-il-white hover:text-il-violet transition-colors"
-      >
-        {q}
-        <span className="text-il-gray-light text-lg ml-4">{open ? "−" : "+"}</span>
-      </button>
-      {open && (
-        <div className="pb-5 text-sm text-il-gray-light leading-relaxed">{a}</div>
-      )}
-    </div>
-  );
-}
