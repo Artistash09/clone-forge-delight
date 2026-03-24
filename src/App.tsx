@@ -20,6 +20,10 @@ import CaseStudyMeritt from "./pages/CaseStudyMeritt.tsx";
 import CaseStudyStackOptimise from "./pages/CaseStudyStackOptimise.tsx";
 import CaseStudyFounderLedSales from "./pages/CaseStudyFounderLedSales.tsx";
 import CaseStudyGreyScout from "./pages/CaseStudyGreyScout.tsx";
+import EmailFinder from "./pages/EmailFinder.tsx";
+import DomainSearch from "./pages/DomainSearch.tsx";
+import TrustCenter from "./pages/TrustCenter.tsx";
+import Affiliate from "./pages/Affiliate.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -48,6 +52,10 @@ const App = () => (
           <Route path="/case-studies/stackoptimise" element={<CaseStudyStackOptimise />} />
           <Route path="/case-studies/founder-led-sales" element={<CaseStudyFounderLedSales />} />
           <Route path="/case-studies/greyscout" element={<CaseStudyGreyScout />} />
+          <Route path="/email-finder" element={<EmailFinder />} />
+          <Route path="/domain-search" element={<DomainSearch />} />
+          <Route path="/trust-center" element={<TrustCenter />} />
+          <Route path="/affiliate" element={<Affiliate />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -15,6 +15,13 @@ const columns = [
     ],
   },
   {
+    title: "Tools",
+    links: [
+      { label: "Email Finder", path: "/email-finder" },
+      { label: "Domain Search", path: "/domain-search" },
+    ],
+  },
+  {
     title: "Use Cases",
     links: [
       { label: "For Sales Teams", path: "/" },
@@ -43,7 +50,7 @@ const columns = [
       { label: "API Docs", path: "/api-docs" },
       { label: "Changelog", path: "/changelog" },
       { label: "Affiliate Program", path: "/affiliate" },
-      { label: "Trust Center", path: "/trust" },
+      { label: "Trust Center", path: "/trust-center" },
     ],
   },
   {
