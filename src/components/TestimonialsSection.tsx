@@ -13,8 +13,8 @@ function TestimonialCard({ t }: { t: typeof testimonials[0] }) {
       <div className="text-4xl text-il-violet/20 font-serif leading-none mb-3">"</div>
       <p className="text-sm text-il-text-muted leading-relaxed mb-4">{t.text}</p>
       <div className="flex items-center gap-2.5">
-        <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-base flex-shrink-0`}>
-          👤
+        <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${t.gradient} flex items-center justify-center text-xs font-bold text-white flex-shrink-0`}>
+          {t.name.split(' ').map(n => n[0]).slice(0, 2).join('')}
         </div>
         <div>
           <div className="text-sm font-semibold text-il-white">{t.name}</div>
