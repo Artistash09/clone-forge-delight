@@ -208,6 +208,7 @@ const stats = [
       <Footer />
       <ToastNotification />
       <CookieBanner />
+      <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }

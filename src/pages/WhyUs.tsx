@@ -192,6 +192,7 @@ const workflow = [
       <Footer />
       <ToastNotification />
       <CookieBanner />
+      <BookDemoModal open={demoOpen} onClose={() => setDemoOpen(false)} />
     </div>
   );
 }
