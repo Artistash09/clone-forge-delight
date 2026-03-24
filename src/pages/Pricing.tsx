@@ -318,39 +318,8 @@ export default function Pricing() {
         </div>
       </div>
 
-      {/* FAQ */}
-      <div className="max-w-[680px] mx-auto px-6 pb-20">
-        <div className="section-title text-center" style={{ fontSize: "28px" }}>Frequently Asked Questions</div>
-        {[
-          { q: "How accurate is Inbound Labs data?", a: "Inbound Labs achieves 98% email deliverability through a 6-step verification pipeline. Data is refreshed weekly." },
-          { q: "Is Inbound Labs GDPR compliant?", a: "Yes. Inbound Labs is fully GDPR compliant. Data Processing Agreements are available for all paid plans." },
-          { q: "Can I cancel anytime?", a: "Yes. No annual contracts required. Cancel anytime from your dashboard. No cancellation fees." },
-          { q: "Do unused credits roll over?", a: "Credits reset monthly. We recommend choosing a plan that matches your monthly usage. Upgrade or downgrade anytime." },
-        ].map((faq, i) => (
-          <FAQItem key={i} q={faq.q} a={faq.a} />
-        ))}
-      </div>
-
       <FAQSection />
       <Footer />
-    </div>
-  );
-}
-
-function FAQItem({ q, a }: { q: string; a: string }) {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="border-b border-il-border">
-      <button
-        onClick={() => setOpen(!open)}
-        className="w-full flex justify-between items-center py-5 text-left text-sm font-semibold text-il-white hover:text-il-violet transition-colors"
-      >
-        {q}
-        <span className="text-il-gray-light text-lg ml-4">{open ? "−" : "+"}</span>
-      </button>
-      {open && (
-        <div className="pb-5 text-sm text-il-gray-light leading-relaxed">{a}</div>
-      )}
     </div>
   );
 }
