@@ -24,12 +24,26 @@ const columns = [
     ],
   },
   {
+    title: "Compare",
+    links: [
+      { label: "vs ZoomInfo", path: "/vs-zoominfo" },
+      { label: "vs Apollo", path: "/vs-apollo" },
+      { label: "vs Cognism", path: "/vs-cognism" },
+      { label: "vs Lusha", path: "/vs-lusha" },
+      { label: "vs Hunter", path: "/vs-hunter" },
+      { label: "vs RocketReach", path: "/vs-rocketreach" },
+    ],
+  },
+  {
     title: "Resources",
     links: [
       { label: "Case Studies", path: "/case-studies" },
       { label: "Our Data", path: "/our-data" },
-      { label: "Blog", path: "/" },
-      { label: "Trust Center", path: "/" },
+      { label: "Blog", path: "/blog" },
+      { label: "API Docs", path: "/api-docs" },
+      { label: "Changelog", path: "/changelog" },
+      { label: "Affiliate Program", path: "/affiliate" },
+      { label: "Trust Center", path: "/trust" },
     ],
   },
   {
@@ -37,13 +51,11 @@ const columns = [
     links: [
       { label: "Pricing", path: "/pricing" },
       { label: "Referral Program", path: "/" },
-      { label: "Trust Center", path: "/" },
       { label: "Privacy Policy", path: "/" },
       { label: "Terms of Service", path: "/" },
     ],
   },
 ];
-
 export default function Footer() {
   return (
     <footer className="bg-il-dark border-t border-il-border py-16 px-6 md:px-10">
