@@ -20,7 +20,7 @@ export default function CaseStudiesSection() {
             <div
               key={cs.company}
               className={`p-7 cursor-pointer hover:bg-il-violet/5 transition-colors ${
-                i < caseStudies.length - 1 ? "border-r border-il-border" : ""
+                i < caseStudies.length - 1 ? "md:border-r border-il-border" : ""
               }`}
             >
               <div className="text-xs font-semibold text-il-gray-light uppercase tracking-wider mb-2">{cs.company}</div>
