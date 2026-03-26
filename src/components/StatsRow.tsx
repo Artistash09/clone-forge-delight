@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 const stats = [
   { target: 98, suffix: "%", label: "Email accuracy rate" },
@@ -9,46 +9,22 @@ const stats = [
 
 function AnimatedNumber({ target, suffix }: { target: number; suffix: string }) {
   const [value, setValue] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    
-    // Fallback for browsers that don't support IntersectionObserver
-    if (!window.IntersectionObserver) {
+    const delay = setTimeout(() => {
       let current = 0;
-      const step = target / 60;
+      const step = target / 50;
       const timer = setInterval(() => {
         current = Math.min(current + step, target);
         setValue(Math.floor(current));
         if (current >= target) clearInterval(timer);
       }, 20);
-      return;
-    }
-    
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        console.log('StatsRow IntersectionObserver:', entry.isIntersecting, entry.intersectionRatio);
-        if (entry.isIntersecting) {
-          let current = 0;
-          const step = target / 60;
-          const timer = setInterval(() => {
-            current = Math.min(current + step, target);
-            setValue(Math.floor(current));
-            if (current >= target) clearInterval(timer);
-          }, 20);
-          obs.unobserve(el);
-        }
-      },
-      { threshold: 0.1 }
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
+    }, 600);
+    return () => clearTimeout(delay);
   }, [target]);
 
   return (
-    <div ref={ref} className="font-display text-4xl font-extrabold text-il-white mb-1.5">
+    <div className="font-display text-4xl font-extrabold text-il-white mb-1.5">
       {value}{suffix}
     </div>
   );
